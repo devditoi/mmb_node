@@ -1,16 +1,24 @@
-# This is a sample Python script.
 
-# Press Ctrl+F5 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import time
+from src.leader_node import setup_leader_node, check_eligibility
+from mmb_layer0.node.node import Node
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press F9 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    master = None
+    try:
+        if not check_eligibility():
+            print("You are not eligible to be a leader node.")
+            exit(0)
+        else:
+            print("You are eligible to be a leader node.")
+        master: Node = setup_leader_node()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+        while True:
+            time.sleep(1)
+    except Exception as e:
+        import traceback
+        print("An error occurred:", e)
+        traceback.print_exc()
+        print("Shutting down gracefully...")
+
+        master.save_chain_to_disk()
