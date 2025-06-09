@@ -472,14 +472,14 @@ files = [
 
 [[package]]
 name = "mmb-layer0"
-version = "0.2.5"
+version = "1.0.1"
 description = "MMB blockchain network"
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "mmb_layer0-0.2.5-py3-none-any.whl", hash = "sha256:2c367dad9de7ce4e0226047d8f7a4ec16bc2bb5c32d2f6b4dbc115e8195f6d1a"},
-    {file = "mmb_layer0-0.2.5.tar.gz", hash = "sha256:338a6f3ac9d0126eccc730c2cb6538e0f88215fc10adfc8677142b974061a6e4"},
+    {file = "mmb_layer0-1.0.1-py3-none-any.whl", hash = "sha256:0150f72d53af4b48af34fcad026261d02f484ea4de80e560d5e6d3a2a8bd2f59"},
+    {file = "mmb_layer0-1.0.1.tar.gz", hash = "sha256:418d447cb2f5d6858aa58b024b98a6588812404bf1722bc016f25b76bb44fceb"},
 ]
 
 [package.dependencies]
@@ -1416,4 +1416,4 @@ watchmedo = ["PyYAML (>=3.10)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4"
-content-hash = "a3a2ab91f8a354eac297f9033aa3b1f2e0f562b142a4a2b330903ad22a528e2d"
+content-hash = "c918b76e3a1f396923253ab64955658c9003ec73e0b6e420636aaaa82697624c"

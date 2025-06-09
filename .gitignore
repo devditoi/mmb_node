@@ -7,3 +7,5 @@ node_ver.txt
 
 # Ignore Python bytecode files
 __pycache__/
+
+poetry.locks
