@@ -1,5 +1,9 @@
 .env
 blockchain
 transactions
-validator_key*
+# validator.key is a public key for all nodes to verify the validator's identity
+validator_key.priv
 node_ver.txt
+
+# Ignore Python bytecode files
+__pycache__/
