@@ -1,0 +1,27 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow on pushes to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Deploy using appleboy/ssh-action
+      - name: Deploy Code via SSH
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: "172.104.62.107"          # Server hostname or IP
+          username: "root"      # SSH username
+          key: ${{ secrets.SSH_PRIVATE_KEY }}       # Private SSH key
+          port: 22                                  # SSH port (default is 22)
+          script: |
+            cd /root/mmb_node
+            git pull origin main
