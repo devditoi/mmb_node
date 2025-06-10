@@ -9,7 +9,7 @@ readme = "README.md"
 requires-python = ">=3.10,<4"
 dependencies = [
     "dotenv (>=0.9.9,<0.10.0)",
-    "mmb-layer0 (>=1.0.2)",
+    "mmb-layer0 (>=1.0.3)",
 ]
 
 
